@@ -1,10 +1,4 @@
 # frozen_string_literal: true
-=begin
-最後の番号のメニューを選択するとエラーとなる。
-お会計額が異様に高い。
-違う番号のドリンク、フードを注文したとき、お会計が正しくない。
-例: (1)コーヒー と (2)アップルパイを頼むと、お会計が意図した金額にならない。
-=end
 
 DRINKS = [
   { name: 'コーヒー', price: '300' },
@@ -35,5 +29,5 @@ order1 = take_order(DRINKS)
 
 puts 'フードメニューはいかがですか?'
 order2 = take_order(FOODS)
-total = DRINKS[order1][:price] + FOODS[order2][:price]
+total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i
 puts "お会計は#{total}円になります。ありがとうございました！"
